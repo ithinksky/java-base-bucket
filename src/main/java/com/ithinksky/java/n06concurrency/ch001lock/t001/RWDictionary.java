@@ -1,7 +1,7 @@
 package com.ithinksky.java.n06concurrency.ch001lock.t001;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -13,10 +13,10 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 public class RWDictionary {
 
-    private Map<String, Object> map = new HashMap<>();
-    private ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
-    private Lock readLock = rwl.readLock();
-    private Lock writeLock = rwl.writeLock();
+    private final Map<String, Object> map = new TreeMap<>();
+    private final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
+    private final Lock readLock = rwl.readLock();
+    private final Lock writeLock = rwl.writeLock();
 
     public Object get(String key) {
         readLock.lock();

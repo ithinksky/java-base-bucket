@@ -41,16 +41,16 @@ public class Lock003DowngradeCacheData {
     /**
      * 缓存都应该是单例的，在这里用单例模式设计
      */
-    public static final Lock003DowngradeCacheData cachedData = Lock003DowngradeCacheData.getInstance();
+    private static final Lock003DowngradeCacheData INSTANCE = new Lock003DowngradeCacheData();
 
     /**
      * 缓存
      */
-    private Map<String, Object> cache = new HashMap<>();
+    private final Map<String, Object> cache = new HashMap<>();
 
-    private ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
-    private Lock readLock = rwl.readLock();
-    private Lock writeLock = rwl.writeLock();
+    private final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
+    private final Lock readLock = rwl.readLock();
+    private final Lock writeLock = rwl.writeLock();
     private volatile boolean cacheValid;
     private Object data;
 
@@ -58,7 +58,7 @@ public class Lock003DowngradeCacheData {
     }
 
     public static Lock003DowngradeCacheData getInstance() {
-        return new Lock003DowngradeCacheData();
+        return INSTANCE;
     }
 
     /**
