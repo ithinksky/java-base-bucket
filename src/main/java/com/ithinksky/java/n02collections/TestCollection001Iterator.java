@@ -26,7 +26,7 @@ public class TestCollection001Iterator {
             if (value.equals("456")) {
                 // 迭代过程中不可以修改集合，抛出 ConcurrentModificationException 异常，由 modCount 控制
 //                list.add("999");
-                iterator.remove(); // 移除不会抛出 ConcurrentModificationException 异常， 由 synchronized 控制
+                iterator.remove(); // 移除不会抛出 ConcurrentModificationException 异常，单线程下安全
             }
             System.out.println(value);
         }
