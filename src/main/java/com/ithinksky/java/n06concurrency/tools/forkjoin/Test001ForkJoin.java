@@ -1,4 +1,4 @@
-package com.ithinksky.java.n06concurrency.tools;
+package com.ithinksky.java.n06concurrency.tools.forkjoin;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
