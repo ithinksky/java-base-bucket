@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
  * @author tengpeng.gao
  * @since 2019/3/10
  */
-public class CountDownLatchDemo {
+public class CountDownLatchDemo002 {
 
     public static void main(String[] args) throws InterruptedException {
         int threadCount = 10;

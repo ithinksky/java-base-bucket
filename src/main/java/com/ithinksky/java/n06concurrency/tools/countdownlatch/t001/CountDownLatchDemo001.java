@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
  * @author tengpeng.gao
  * @since 2019/3/10
  */
-public class CountDownLatch001 {
+public class CountDownLatchDemo001 {
 
     static CountDownLatch countDownLatch = new CountDownLatch(2);
 
