@@ -41,23 +41,53 @@ public class Test001SingleLinkedList {
 
         public void add(E item) {
             // 1、默认在尾部追加
-            // 2、将游标移动至尾部
+            // 2、将游标移动至尾部（或维护尾部节点引用）
             // 3、新增的节点变为尾部节点
-//            Node<E> newNode = new Node<>(item, null);
-//            last.next = newNode;
-//            last = newNode;
+
+            // 如果是空链表，
+            // 则插入的第一个节点即为头部节点，也为尾部节点
+            if (this.first == null) {
+                this.first = new Node<>(item, null);
+                this.last = this.first;
+            } else {
+                Node<E> newNode = new Node<>(item, null);
+                last.next = newNode;
+                last = newNode;
+            }
+
         }
 
         @Override
         public void delete(E e) {
             // 1、先找到存储数据的节点
-            // 2、然后执行删除操作
-
+            // 2、找到数据节点的上一个节点和下一个节点（头节点和尾节点情况除外）
+            // 3、然后执行删除操作
+            // TODO
         }
 
         @Override
         public void query(E e) {
+            if (first == null) {
+                System.out.println("空链表");
+            } else {
+                Node<E> currentNode = first;
+                E item = first.item;
+                if (item != null && item.equals(e)) {
+                    System.out.println("找到数据：" + e);
+                    return;
+                }
 
+                // 遍历节点，对比节点内容与所查询内容
+                while (currentNode.next != null) {
+                    currentNode = currentNode.next;
+                    item = currentNode.item;
+                    if (item != null && item.equals(e)) {
+                        System.out.println("找到数据：" + e);
+                        return;
+                    }
+                }
+            }
+            System.out.println("未找到数据：" + e);
         }
 
         @Override
@@ -69,7 +99,7 @@ public class Test001SingleLinkedList {
                 System.out.println("first " + first.item);
                 while (currentNode.next != null) {
                     currentNode = currentNode.next;
-                    System.out.println("currentNode " + currentNode.item);
+                    System.out.println("currentNode.item " + currentNode.item);
                 }
             }
         }
@@ -82,7 +112,19 @@ public class Test001SingleLinkedList {
 
         MySingleLinkedList<String> mySingleLinkedList = new MySingleLinkedList<>(10);
 
+        // 遍历
         mySingleLinkedList.foreach();
+
+        // 增加
+        mySingleLinkedList.add("A");
+        mySingleLinkedList.add("B");
+        mySingleLinkedList.add("C");
+        mySingleLinkedList.add("D");
+        mySingleLinkedList.foreach();
+
+        // 查找
+        mySingleLinkedList.query("X");
+
 
     }
 
