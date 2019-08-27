@@ -1,5 +1,7 @@
 package com.ithinksky.java.n01base;
 
+import org.junit.Test;
+
 /**
  * 功能描述：
  *
@@ -7,7 +9,8 @@ package com.ithinksky.java.n01base;
  */
 public class TestString {
 
-    public static void main(String[] args) {
+    @Test
+    public void testA() {
 
         String str = "cbcAuditApp-womenClothesAuditProcess-startForm";
 
@@ -16,4 +19,11 @@ public class TestString {
 
     }
 
+    @Test
+    public void testB() {
+
+        String withdrawalAccount = "123456789";
+        // 账号脱敏规则，及脱敏处理
+        System.out.println(withdrawalAccount.substring(withdrawalAccount.length() - 4));
+    }
 }
