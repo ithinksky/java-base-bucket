@@ -25,7 +25,7 @@ public class TestBigDecimal {
     public void testA() {
         BigDecimal walletAmount = new BigDecimal(1100.2202);
         System.out.println(" amount ========== " + walletAmount.doubleValue());
-        walletAmount = TestBigDecimal.convertBigDecimalDoubleToString(walletAmount);
+        walletAmount = TestBigDecimal.convertBigDecimalDoubleToString(null);
 
         BigDecimal changeAmount = new BigDecimal(100.2101);
         System.out.println(" changeAmount ========== " + changeAmount.doubleValue());
@@ -45,7 +45,7 @@ public class TestBigDecimal {
      * @param bigDecimal bigDecimal(0.22)
      * @return bigDecimal("0.22")
      */
-    public static BigDecimal convertBigDecimalDoubleToString(@NotNull BigDecimal bigDecimal) {
+    public static BigDecimal convertBigDecimalDoubleToString(BigDecimal bigDecimal) {
         return new BigDecimal(Double.toString(bigDecimal.doubleValue()));
     }
 
