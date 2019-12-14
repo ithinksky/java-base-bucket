@@ -1,4 +1,4 @@
-package com.ithinksky.java.n01base;
+package com.ithinksky.java.n01base.string;
 
 import org.junit.Test;
 
