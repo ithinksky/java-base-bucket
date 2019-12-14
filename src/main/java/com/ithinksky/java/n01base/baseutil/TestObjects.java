@@ -13,15 +13,6 @@ import static junit.framework.TestCase.assertTrue;
 public class TestObjects {
 
     @Test
-    public void testB() {
-
-        Integer currentDepositoryIdObject = 1;
-        Integer targetDepositoryIdObject = 1;
-
-        assertTrue(Objects.equals(currentDepositoryIdObject, targetDepositoryIdObject));
-    }
-
-    @Test
     public void testA() {
 
         Integer currentDepositoryIdObject = 1;
@@ -30,6 +21,33 @@ public class TestObjects {
         assertFalse(Objects.equals(currentDepositoryIdObject, targetDepositoryIdObject));
     }
 
+    @Test
+    public void testB() {
 
+        Integer currentDepositoryIdObject = 1;
+        Integer targetDepositoryIdObject = 1;
+
+        assertTrue(Objects.equals(currentDepositoryIdObject, targetDepositoryIdObject));
+    }
+
+
+
+    @Test
+    public void testC() {
+
+        int currentDepositoryIdObject = 1;
+        Integer targetDepositoryIdObject = 1;
+
+        assertTrue(Objects.equals(currentDepositoryIdObject, targetDepositoryIdObject));
+    }
+
+    @Test
+    public void testD() {
+
+        Integer currentDepositoryIdObject = 1;
+        int targetDepositoryIdObject = 1;
+
+        assertTrue(Objects.equals(currentDepositoryIdObject, targetDepositoryIdObject));
+    }
 
 }
