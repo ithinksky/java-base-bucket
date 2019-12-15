@@ -30,6 +30,7 @@ public class TestCollection001Iterator {
             }
             System.out.println(value);
         }
+        System.out.println(list);
     }
 
 }
