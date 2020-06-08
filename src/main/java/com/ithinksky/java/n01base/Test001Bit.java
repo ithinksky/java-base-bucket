@@ -45,8 +45,8 @@ public class Test001Bit {
         System.out.println("~(-5) === " + ~(-5));
         // ~(-5) === 4
 
-        int x = 10 >> 1;
-        System.out.println("10 >> 1 === " + x);
+        int x = 3 >> 1;
+        System.out.println("3 >> 1 === " + x);
 
     }
 
