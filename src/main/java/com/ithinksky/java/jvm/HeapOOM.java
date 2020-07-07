@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * -verbose:gc -Xmx20m -Xms20m -XX:+heapDumpOnOutOfMemoryError -XX:heapDumpPath=c:/
+ *
+ * win10:
+ * -Xmx20m -Xms20m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=D:\jvmdebug
  *
  * @author tengpeng.gao
  */
