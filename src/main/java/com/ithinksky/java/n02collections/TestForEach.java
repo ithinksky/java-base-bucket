@@ -21,7 +21,7 @@ public class TestForEach {
 
         map.forEach(
                 (k, v) -> {
-                    if (k.equalsIgnoreCase("b")) {
+                    if ("b".equalsIgnoreCase(k)) {
                         return;
                     }
                     System.out.println(k + " === " + v);

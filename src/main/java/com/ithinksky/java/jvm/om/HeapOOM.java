@@ -1,9 +1,12 @@
-package com.ithinksky.java.jvm;
+package com.ithinksky.java.jvm.om;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ *
+ * vm：参数设置
+ *
  * mac:
  *  -Xmx20m -Xms20m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/jvmdebug
  *
@@ -38,6 +41,6 @@ public class HeapOOM {
 //	at java.util.ArrayList.ensureExplicitCapacity(ArrayList.java:239)
 //	at java.util.ArrayList.ensureCapacityInternal(ArrayList.java:231)
 //	at java.util.ArrayList.add(ArrayList.java:462)
-//	at com.ithinksky.java.jvm.HeapOOM.main(HeapOOM.java:19)
+//	at com.ithinksky.java.jvm.omm.HeapOOM.main(HeapOOM.java:19)
 //
 // Process finished with exit code 1
