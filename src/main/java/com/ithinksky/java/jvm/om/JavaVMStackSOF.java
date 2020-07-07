@@ -1,6 +1,9 @@
 package com.ithinksky.java.jvm.om;
 
 /**
+ *  1、减少空间：使用 -Xss 参数减少栈内存容量
+ *  2、占用空间：定义大量的本地变量
+ *
  * vm：参数设置
  * -Xss160k
  *
@@ -10,7 +13,14 @@ package com.ithinksky.java.jvm.om;
  *
  * @author tengpeng.gao
  */
-public class StackOM {
+public class JavaVMStackSOF {
+
+    private int stackLength = 1;
+
+    public void stackLeak() {
+        stackLength++;
+        stackLeak();
+    }
 
     public static void main(String[] args) {
         JavaVMStackSOF javaVMStackSOF = new JavaVMStackSOF();
@@ -23,21 +33,8 @@ public class StackOM {
 
     }
 
-    static class JavaVMStackSOF {
-
-        private int stackLength = 1;
-
-        public void stackLeak() {
-            stackLength++;
-            stackLeak();
-        }
-    }
 
     // 执行结果:
     // Exception in thread "main" java.lang.StackOverflowError
-
-    // Xss160k  stack length:772
-    // Xss170k  stack length:7702
-    // Xss180k  stack length:1004
 
 }
