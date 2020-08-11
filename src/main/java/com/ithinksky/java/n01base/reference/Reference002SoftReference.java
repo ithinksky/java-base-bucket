@@ -8,6 +8,8 @@ import java.lang.ref.SoftReference;
  * 在JVM内存充足的情况下，软引用并不会被垃圾回收器回收，
  * 只有在JVM内存不足的情况下，才会被垃圾回收器回收。
  *
+ * vm：-Xmx2m -Xms2m
+ *
  * 所以软引用的这种特性，一般用来实现一些内存敏感的缓存，
  * 只要内存空间足够，对象就会保持不被回收掉，比如网页缓存、图片缓存等
  *
@@ -18,6 +20,8 @@ public class Reference002SoftReference {
 
     public static void main(String[] args) {
         SoftReference<String> softReference = new SoftReference<>(new String("软引用"));
+        System.gc();
+        System.runFinalization();
         System.out.println(softReference.get());
     }
 
