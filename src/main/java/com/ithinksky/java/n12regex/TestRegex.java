@@ -17,8 +17,10 @@ public class TestRegex {
     public static void main(String[] args) {
 //        String content = "212用户名212312";
 //        String content = "121212用户名212";
-//        String content = "121212用户名12121212";
-        String content = "lv测试l";
+        String content = "121212用户名12121212";
+//        String content = "lv测试l";
+//        String content = "l123v测试l";
+
 
         System.out.println("result == " + TestRegex.handlerNumber(content));
 
