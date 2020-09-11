@@ -11,14 +11,13 @@ import java.util.regex.Pattern;
  */
 public class TestRegex {
 
-    /**
-     * 分割字符串中的汉字和数字问题
-     */
-    static Pattern p = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
+  /** 分割字符串中的汉字和数字问题 */
+  static Pattern p = Pattern.compile("([a-z])*+[\\u4e00-\\u9fa5]+|\\d+");
 
     public static void main(String[] args) {
 
         String content = "121212用户名12121212";
+//        String content = "lv测试";
 
         System.out.println("result == " + TestRegex.handlerNumber(content));
 
@@ -41,7 +40,7 @@ public class TestRegex {
     }
 
     private static String getContent(String word) {
-        String pattern = ".*\\d{5,}";
+    String pattern = ".*\\d{5,}";
         boolean isMatch = Pattern.matches(pattern, word);
         if (isMatch) {
             word = "**" + word.substring(word.length() - 4);
