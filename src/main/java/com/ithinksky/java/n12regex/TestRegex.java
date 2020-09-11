@@ -12,12 +12,13 @@ import java.util.regex.Pattern;
 public class TestRegex {
 
   /** 分割字符串中的汉字和数字问题 */
-  static Pattern p = Pattern.compile("([a-z])*+[\\u4e00-\\u9fa5]+|\\d+");
+  static Pattern p = Pattern.compile("([a-z])*+[\\u4e00-\\u9fa5]+([a-z])*+|\\d+");
 
     public static void main(String[] args) {
-
-        String content = "121212用户名12121212";
-//        String content = "lv测试";
+//        String content = "212用户名212312";
+//        String content = "121212用户名212";
+//        String content = "121212用户名12121212";
+        String content = "lv测试l";
 
         System.out.println("result == " + TestRegex.handlerNumber(content));
 
