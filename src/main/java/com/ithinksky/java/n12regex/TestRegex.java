@@ -12,18 +12,19 @@ import java.util.regex.Pattern;
 public class TestRegex {
 
   /** 分割字符串中的汉字和数字问题 */
-  static Pattern p = Pattern.compile("([a-z])*+[\\u4e00-\\u9fa5]+([a-z])*+|\\d+");
+  static Pattern p = Pattern.compile("([0-9]{0,4}+([a-zA-Z])*+[\\u4e00-\\u9fa5]+([a-z])*+)|\\d{5,}");
 
     public static void main(String[] args) {
-//        String content = "212用户名212312";
-//        String content = "121212用户名212";
-        String content = "121212用户名12121212";
-//        String content = "lv测试l";
-//        String content = "l123v测试l";
-
-
-        System.out.println("result == " + TestRegex.handlerNumber(content));
-
+        System.out.println("l123v测试l == " + TestRegex.handlerNumber("l123v测试l"));
+        System.out.println("121212用户名12121212 == " + TestRegex.handlerNumber("121212用户名12121212"));
+        System.out.println("121212用户名212 == " + TestRegex.handlerNumber("121212用户名212"));
+        System.out.println("212用户名212312 == " + TestRegex.handlerNumber("212用户名212312"));
+        System.out.println("lv测试l == " + TestRegex.handlerNumber("lv26842测试l"));
+        System.out.println("lv测试l == " + TestRegex.handlerNumber("lv测12365试l"));
+        System.out.println("lW1562fe2v测试l == " + TestRegex.handlerNumber("lW1562fe2v测试l"));
+        System.out.println("lW1562fe2v测123658试l == " + TestRegex.handlerNumber("lW1562fe2v测123658试l"));
+        System.out.println("lw170 == " + TestRegex.handlerNumber("lw170"));
+        System.out.println("170lw == " + TestRegex.handlerNumber("170lw"));
     }
 
     public static String handlerNumber(String content) {
