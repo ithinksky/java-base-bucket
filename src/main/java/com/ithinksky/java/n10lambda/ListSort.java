@@ -29,11 +29,22 @@ public class ListSort {
         tabBean.setName("B");
         list.add(tabBean);
 
-
         List<TabBean> collect = list.stream().sorted(Comparator.comparing(TabBean::getKey))
                 .collect(Collectors.toList());
         System.out.println("collect ==== " + collect);
 
+//        String fastFilters = "2,1,3";
+//        String[] split = fastFilters.split(",");
+//        List<Integer> expList = new ArrayList(split.length);
+//        for (String str: split){
+//            expList.add(Integer.parseInt(str));
+//        }
+//        Ordering<TabBean> explicitOrder = Ordering.explicit(expList).onResultOf(e -> Integer.parseInt(e.key));
+//        ImmutableList<TabBean> students = explicitOrder.immutableSortedCopy(list);
+//        log.info("students === {}", students);
+//        List<TabBean> tabBeans = explicitOrder.sortedCopy(list);
+//        log.info("tabBeans === {}", tabBeans);
+//        students === [TabBean{key='2', name='B'}, TabBean{key='1', name='A'}, TabBean{key='3', name='C'}]
 
     }
 
