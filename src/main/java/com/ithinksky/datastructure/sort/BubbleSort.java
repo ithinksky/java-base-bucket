@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * 基本思想:
  * 冒泡排序，较大的数沉下去，较小的数慢慢冒起来
+ * 时间复杂度: O(N^2)
+ * 空间复杂度: O(1)
  *
  * @author tengpeng.gao
  */
