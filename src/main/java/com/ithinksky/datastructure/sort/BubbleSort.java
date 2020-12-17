@@ -25,12 +25,13 @@ public class BubbleSort {
     /**
      * 从右变开始，将小的交换到前面，将大的交换到后面
      * 直观表达，每一趟遍历，将一个最小的数移到序列前端。
+     *
      * @param inputArrays
      */
     public static void bubbleSortDesc(int[] inputArrays) {
         int length = inputArrays.length;
-        for (int i = length; i > 0; i--) {
-            for (int j = length - 1; j > 0; j--) {
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = length - 1 - i; j > 0; j--) {
                 if (inputArrays[j - 1] > inputArrays[j]) {
                     int temp = inputArrays[j - 1];
                     inputArrays[j - 1] = inputArrays[j];
@@ -44,6 +45,7 @@ public class BubbleSort {
     /**
      * 从左变开始，将小的交换到前面，将大的交换到后面
      * 直观表达，每一趟遍历，将一个最大的数移到序列末尾。
+     *
      * @param inputArrays
      */
     public static void bubbleSortAsc(int[] inputArrays) {
