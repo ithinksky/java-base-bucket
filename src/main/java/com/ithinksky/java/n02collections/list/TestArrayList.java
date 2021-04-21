@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * 1、ArrayList 的创建
@@ -123,6 +120,99 @@ public class TestArrayList {
 
 
     }
+
+
+    @Test
+    public void testRemove() {
+        ArrayList<Integer> list = new ArrayList<>(3);
+        list.add(10);
+        list.add(100);
+        list.add(90);
+
+        int index = 2;
+        list.remove(index);
+
+        Gson gson = new Gson();
+        System.out.println(" ==== " + gson.toJson(list));
+        //  ==== [10,100]
+
+        list = new ArrayList<>(3);
+        list.add(10);
+        list.add(100);
+        list.add(90);
+
+        Integer indexObject = 2;
+        list.remove(indexObject);
+        System.out.println(" ==== " + gson.toJson(list));
+        //  ==== [10,100,90]
+
+        // 方法的重载，remove(index)实际上执行的是List的remove(Object obj)方法。
+
+    }
+
+
+    @Test
+    public void testSubList() {
+        ArrayList<Integer> list = new ArrayList<>(3);
+        list.add(10);
+        list.add(100);
+        list.add(90);
+
+        List<Integer> integers = list.subList(0, 1);
+        // subList 前包含，后不包含
+
+        Gson gson = new Gson();
+        System.out.println("integers ==== " + gson.toJson(integers));
+
+        System.out.println("list ==== " + gson.toJson(list));
+    }
+
+
+    @Test
+    public void testForEach() {
+        ArrayList<Integer> list = new ArrayList<>(3);
+        list.add(10);
+        list.add(100);
+        list.add(90);
+
+        list.forEach(e->{
+            if(e.equals(10)){
+                list.remove(e);
+            }
+        });
+        // java.util.ConcurrentModificationException
+        // 因为 remove 操作会改变集合的大小。
+        // 从而容易造成结果不准确甚至数组下标越界，
+        // 更严重者还会抛出 ConcurrentModificationException。
+
+        Gson gson = new Gson();
+        System.out.println(" ==== " + gson.toJson(list));
+    }
+
+
+    @Test
+    public void testIterator() {
+        ArrayList<Integer> list = new ArrayList<>(3);
+        list.add(10);
+        list.add(100);
+        list.add(90);
+
+        Iterator<Integer> iterator = list.iterator();
+        while (iterator.hasNext()){
+            Integer next = iterator.next();
+            if(next.equals(10)){
+                iterator.remove();
+            }
+        }
+        // 只能进行remove操作，add、clear 等 Itr 中没有。
+        // 调用 remove 之前必须先调用 next。因为 remove 开始就对 lastRet 做了校验。而 lastRet 初始化时为 -1。
+        // next 之后只可以调用一次 remove。因为 remove 会将 lastRet 重新初始化为 -1
+
+
+        Gson gson = new Gson();
+        System.out.println(" ==== " + gson.toJson(list));
+    }
+
 
     private void printElementData(ArrayList<String> list) throws IllegalAccessException, NoSuchFieldException {
         Class<? extends ArrayList> aClass = list.getClass();
