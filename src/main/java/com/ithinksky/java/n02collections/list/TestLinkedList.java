@@ -1,5 +1,6 @@
 package com.ithinksky.java.n02collections.list;
 
+import com.ithinksky.java.util.GsonUtil;
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -21,10 +22,8 @@ public class TestLinkedList {
     public void testLinkedList() {
 
         LinkedList<String> linkedList = new LinkedList<>();
-        System.out.println(linkedList);
         linkedList.add(null);
-        System.out.println(linkedList);
-
+        GsonUtil.print(linkedList);
     }
 
 

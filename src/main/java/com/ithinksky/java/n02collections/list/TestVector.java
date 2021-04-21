@@ -1,5 +1,6 @@
 package com.ithinksky.java.n02collections.list;
 
+import com.ithinksky.java.util.GsonUtil;
 import org.junit.Test;
 
 import java.util.Vector;
@@ -17,8 +18,10 @@ public class TestVector {
     @Test
     public void testArrayListParamCollection() {
 
-        Vector<String> vector = new Vector<>();
-        vector.add("string");
+        Vector<String> vector = new Vector<>(10);
+        vector.add(null);
+
+        GsonUtil.print(vector);
 
     }
 
