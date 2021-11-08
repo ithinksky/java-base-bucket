@@ -33,7 +33,7 @@ public class Test001Bit {
 
 
         System.out.println("无符号右移 ");
-        int g = 5>>>2 ;
+        int g = 5 >>> 2;
         System.out.println("5 >>> 2 === " + g);
         // 5 >>> 2 === 1
 
@@ -47,6 +47,16 @@ public class Test001Bit {
 
         int x = 3 >> 1;
         System.out.println("3 >> 1 === " + x);
+
+
+        int a = 31; // 11111 = 31
+        int b = a >>> 2; // 00111 = 7
+        System.out.println(b);
+        System.out.println(a ^ a ^ b);
+
+        System.out.println((short)10/10.2); // double
+
+        System.out.println(4|2); //  100 | 010 = 110 = 6
 
     }
 
