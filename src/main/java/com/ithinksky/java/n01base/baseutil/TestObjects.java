@@ -50,4 +50,14 @@ public class TestObjects {
         assertTrue(Objects.equals(currentDepositoryIdObject, targetDepositoryIdObject));
     }
 
+
+    @Test
+    public void testF() {
+
+        Integer currentDepositoryIdObject = 200;
+        int targetDepositoryIdObject = 200;
+
+        assertTrue(Objects.equals(currentDepositoryIdObject, targetDepositoryIdObject));
+    }
+
 }
