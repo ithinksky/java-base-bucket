@@ -1,5 +1,7 @@
 package com.ithinksky.java.n01base.string;
 
+import org.junit.Test;
+
 /**
  * 功能描述：
  *
@@ -7,21 +9,22 @@ package com.ithinksky.java.n01base.string;
  */
 public class TestString {
 
-    public static void main(String[] args) {
+    @Test
+    public void test() {
 
         String str1 = "abc";
-        String str2 = new String("abc").intern();
+        String str2 = new String("abc");
         String str3 = str2.intern();
+        String str4 = "abc";
 
-        System.out.println(str1 == str2);
-        System.out.println(str2 == str3);
-        System.out.println(str1 == str3);
+        System.out.println(str1 == str2); // false
+        System.out.println(str2 == str3); // false
+        System.out.println(str1 == str3); // true
+        System.out.println(str1 == str4); // true
 
-        // true
-        // true
-        // true
     }
 
+    @Test
     public void testA() {
 
         String str = "cbcAuditApp-womenClothesAuditProcess-startForm";
@@ -31,10 +34,21 @@ public class TestString {
 
     }
 
+
+
+    @Test
     public void testB() {
 
         String withdrawalAccount = "123456789";
         // 账号脱敏规则，及脱敏处理
         System.out.println(withdrawalAccount.substring(withdrawalAccount.length() - 4));
     }
+
+    @Test
+    public void testNull() {
+
+        String str = new String(null);
+
+    }
+
 }
