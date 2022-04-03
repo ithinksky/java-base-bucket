@@ -47,7 +47,7 @@ public class TestString {
     @Test
     public void testNull() {
 
-        String str = new String(null);
+//        String str = new String(null);
 
     }
 

@@ -5,21 +5,20 @@ import org.junit.Test;
 /**
  * 追本溯源：查看字节码内容
  * javap -c TestInteger.class
- *
+ * <p>
  * 自动装箱：
- *   Integer i = 100; // Integer.valueOf(100)
- *
+ * Integer i = 100; // Integer.valueOf(100)
+ * <p>
  * 自动拆箱
- *   integer.intValue()
- *
+ * integer.intValue()
+ * <p>
  * java中基本类型的包装类的大部分都实现了常量池技术
  * Byte,Short,Integer,Long,Character,Boolean
- *
+ * <p>
  * Byte,Short,Integer,Long,Character这5种整型的包装类也只是在对应值小于等于127时才可使用对象池，也即对象不负责创建和管理大于127的这些类的对象
- *
+ * <p>
  * 设计模式:
- *    享元模式
- *
+ * 享元模式
  */
 public class TestInteger {
 
@@ -32,7 +31,7 @@ public class TestInteger {
         int j2 = 200;
 
         System.out.println(i1 == j1); // true
-        System.out.println(i2 == j2); // true
+        System.out.println(j2 == i2); // true
     }
 
     @Test
