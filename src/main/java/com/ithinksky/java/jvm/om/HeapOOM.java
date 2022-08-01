@@ -25,7 +25,15 @@ public class HeapOOM {
     }
 
     static class OOMObject {
+        private String msg = "hh";
 
+        public String getMsg() {
+            return msg;
+        }
+
+        public void setMsg(String msg) {
+            this.msg = msg;
+        }
     }
 
 }
