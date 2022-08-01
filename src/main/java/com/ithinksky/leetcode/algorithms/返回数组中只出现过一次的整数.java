@@ -9,7 +9,7 @@ package com.ithinksky.leetcode.algorithms;
  * 1^0 = 1
  * 1^1 = 0
  */
-public class 返回数组中只出现一过一次的整数 {
+public class 返回数组中只出现过一次的整数 {
 
 
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class 返回数组中只出现一过一次的整数 {
 
         int length = intArray.length;
 
-        System.out.println(返回数组中只出现一过一次的整数.singleNumber(intArray));
+        System.out.println(返回数组中只出现过一次的整数.singleNumber(intArray));
 
         // int resultArray = [3, 5] / [5, 3]
     }
