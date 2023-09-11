@@ -16,10 +16,10 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jdk.version>1.8</jdk.version>
-        <gson.version>2.2.4</gson.version>
+        <gson.version>2.8.9</gson.version>
 
         <guava.version>31.0.1-jre</guava.version>
-        <hutool-all.version>5.7.21</hutool-all.version>
+        <hutool-all.version>5.8.21</hutool-all.version>
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-codec.version>1.15</commons-codec.version>
         <commons-collections4.version>4.4</commons-collections4.version>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.1</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
