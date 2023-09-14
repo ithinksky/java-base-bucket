@@ -20,7 +20,6 @@
 
         <guava.version>32.0.0-jre</guava.version>
         <hutool-all.version>5.8.21</hutool-all.version>
-        <commons-beanutils.version>1.9.4</commons-beanutils.version>
         <commons-codec.version>1.15</commons-codec.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
@@ -67,11 +66,6 @@
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>${commons-codec.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-beanutils</groupId>
-            <artifactId>commons-beanutils</artifactId>
-            <version>${commons-beanutils.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
